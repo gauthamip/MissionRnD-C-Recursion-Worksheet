@@ -22,9 +22,40 @@
 
 */
 #include "stdafx.h"
+#include<stdio.h>
+int t1 = 0;
+int t = 0;
+int step(int s)
+{
 
-
+	if (s == 0)
+	{
+		t++;
+		return t;
+	}
+	if (s != 0)
+	{
+		s = s - 1;
+	}
+	int t1 = step(s);
+	s = s + 1;
+	if (s > 1)
+	{
+		s = s - 2;
+		if (s != 0)
+			t1 = step(s);
+	}
+	if (s == 0)
+	{
+		t++;
+		return t;
+	}
+	return t;
+}
 int get_steps(int s)
 {
-	return 0;
+	t = 0;
+	int t1 = 0;
+	t1 = step(s);
+	return t1;
 }
